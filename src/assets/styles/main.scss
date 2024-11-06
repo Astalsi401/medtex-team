@@ -1,0 +1,132 @@
+@import "./variables.scss";
+@import "./reboot.scss";
+
+.left-content {
+  width: min(432px, 100%);
+  flex-shrink: 0;
+}
+
+.right-content {
+  flex-grow: 1;
+  width: calc(100% - 432px - 1.5rem);
+}
+
+@media (max-width: 992px) {
+  .left-content,
+  .right-content {
+    width: 100%;
+  }
+}
+
+.page-card {
+  background-image: var(--Gradient_light);
+}
+
+.page-btn {
+  cursor: pointer;
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  width: min(100%, 240px);
+
+  &:hover {
+    background-color: var(--clr);
+    color: var(--bg);
+  }
+  &,
+  &:hover,
+  &:active,
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+.profile-logo {
+  width: min(100%, 188px);
+}
+
+.page-avatar {
+  border-radius: 50%;
+  width: min(100%, 200px);
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.page-highlight {
+  background-image: var(--Gradient_Main);
+}
+
+.page-tag {
+  background-image: var(--Gradient_light);
+  border-radius: 8px;
+}
+
+.graph {
+  --unit: 63px;
+  --scrollbar-color-thumb: var(--Border);
+  --scrollbar-color-track: transparent;
+  --scrollbar-width: thin;
+  --scrollbar-width-legacy: 10px;
+  border-radius: 0 0 16px 16px;
+}
+
+@supports (scrollbar-width: auto) {
+  .graph {
+    scrollbar-color: var(--scrollbar-color-thumb) var(--scrollbar-color-track);
+    scrollbar-width: var(--scrollbar-width);
+  }
+}
+
+@supports selector(::-webkit-scrollbar) {
+  .graph::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-color-thumb);
+  }
+  .graph::-webkit-scrollbar-track {
+    background: var(--scrollbar-color-track);
+  }
+  .graph::-webkit-scrollbar {
+    max-width: var(--scrollbar-width-legacy);
+    max-height: var(--scrollbar-width-legacy);
+  }
+}
+
+.cell {
+  width: calc(var(--unit) * 2);
+  flex-shrink: 0;
+}
+
+.cell:nth-child(2) {
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: calc(var(--unit) * var(--progress));
+    height: 20px;
+    background-image: var(--Gradient_orange);
+    position: absolute;
+    left: calc(var(--unit) * 2);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.milestone {
+  position: relative;
+  line-height: 1.875;
+  &:not(:last-child)::after,
+  &:not(:first-child)::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 4px;
+    height: calc(50% - 0.5rem);
+    background-color: var(--page-third);
+    left: 0.5rem;
+  }
+  &:not(:last-child)::after {
+    top: calc(50% + 0.5rem);
+  }
+  &:not(:first-child)::before {
+    bottom: calc(50% + 0.5rem);
+  }
+}
