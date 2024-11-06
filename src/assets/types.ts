@@ -19,4 +19,5 @@ export type TeamInfo = {
   targetMarket: string;
   coreProducts: { name: string; type: string; progress: number; countries: string }[];
   milestones: string[];
+  error?: string;
 };

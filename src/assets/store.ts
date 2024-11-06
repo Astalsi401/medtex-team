@@ -8,10 +8,12 @@ const stateSlice = createSlice({
     loading: true,
     teamId: "",
     data: {},
+    error: null,
   } as {
     loading: boolean;
     teamId: string;
     data: TeamInfo;
+    error: string | null;
   },
   reducers: {
     setState: (state: any, { payload }: PayloadAction<{ [key: string]: boolean | string | TeamInfo }>) => Object.keys(payload).forEach((key) => (state[key] = payload[key])),

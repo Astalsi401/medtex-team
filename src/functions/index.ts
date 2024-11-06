@@ -7,7 +7,8 @@ class FetchData {
   post: (url: string, data?: any) => Promise<any>;
   constructor() {
     this.errorHandler = (error) => {
-      throw error;
+      console.error(error);
+      return { error: error.message };
     };
     this.fetchWrapper = (url, options) =>
       fetch(url, options)

@@ -20,6 +20,15 @@
 
 .page-card {
   background-image: var(--Gradient_light);
+  & > div {
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3) {
+      div:last-child {
+        border-bottom: 1px solid black;
+      }
+    }
+  }
 }
 
 .page-btn {

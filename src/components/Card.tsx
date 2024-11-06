@@ -14,8 +14,10 @@ export const Card: React.FC = ({}) => {
 };
 
 const CardInfo: React.FC<{ title: string; value: string }> = ({ title, value }) => (
-  <div className="col-4 px-2 px-sm-3">
+  <div className="col-4 d-flex flex-column px-2 px-sm-3">
     <div className="my-2">{title}</div>
-    <div className="my-2 fw-bold page-text-large">{value}</div>
+    <div className="my-2 fw-bold page-text-large flex-grow-1" style={{ minHeight: 86 }}>
+      {value}
+    </div>
   </div>
 );

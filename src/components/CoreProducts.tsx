@@ -15,14 +15,15 @@ export const CoreProducts: React.FC = () => {
             <Cell key={colname} className="text-center page-text-white page-bg-third" children={colname} />
           ))}
         </Row>
-        {coreProducts.map(({ name, progress }) => (
+        {coreProducts.map(({ name, progress, countries }) => (
           <Row key={name} className="position-relative" style={{ "--progress": progress * 10 } as React.CSSProperties}>
             <Cell children={name} />
-            {Array(6)
+            {Array(5)
               .fill(0)
               .map((_, i) => (
                 <Cell key={`${name}-progress-${i}`} />
               ))}
+            <Cell children={countries} />
           </Row>
         ))}
       </div>
