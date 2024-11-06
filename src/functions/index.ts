@@ -18,5 +18,5 @@ class FetchData {
   }
 }
 export const fetchData = new FetchData();
-export const getTeamInfo: (teamId: string, lang: string) => Promise<TeamInfo> = async (teamId, lang) => (window.location.hostname === "localhost" || window.location.hostname === "astalsi401.github.io" ? await fetchData.get(`/json/${teamId}-${lang}.json`) : await fetchData.get(`https://api.taiwan-healthcare.org/api/v1/team/${teamId}?lang=${lang}`));
+export const getTeamInfo: (teamId: string, lang: string) => Promise<TeamInfo> = async (teamId, lang) => (window.location.hostname === "localhost" || window.location.hostname === "astalsi401.github.io" ? await fetchData.get(`${import.meta.env.BASE_URL}json/${teamId}-${lang}.json`) : await fetchData.get(`https://api.taiwan-healthcare.org/api/v1/team/${teamId}?lang=${lang}`));
 export const getSearchParam = (name: string) => new URLSearchParams(window.location.search).get(name);
