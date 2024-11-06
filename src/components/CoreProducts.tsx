@@ -5,8 +5,8 @@ export const CoreProducts: React.FC = () => {
   const { coreProducts } = useAppSelector((state) => state.data);
   const cols = useMemo(() => ["", "Pre-clinical", "Phase I", "Phase II", "Phase III", "已取證", "取證國家"], []);
   return (
-    <div className="page-rounded page-bd page-bg-white mb-4">
-      <div className="my-3 p-4 pb-0 fw-bold page-text-large d-flex align-items-center">
+    <div className="page-rounded page-bd page-bg-white mb-sm-4 mb-3">
+      <div className="mb-3 p-sm-4 p-3 pb-0 fw-bold page-text-large d-flex align-items-center">
         <span className="material-symbols-outlined me-1">signal_cellular_alt</span>核心產品與進度
       </div>
       <div className="mt-3 graph" style={{ overflowX: "auto" }}>

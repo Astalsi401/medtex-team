@@ -3,10 +3,10 @@ import { useAppSelector } from "@store";
 export const Project: React.FC = () => {
   const { project, company, region, mainInvester } = useAppSelector((state) => state.data);
   return (
-    <div className="page-rounded page-bd page-bg-white p-4 mb-4">
-      <div className="my-3 fw-bold page-text-x-large">{project}</div>
+    <div className="page-rounded page-bd page-bg-white p-sm-4 p-3 mb-sm-4 mb-3">
+      <div className="mb-3 fw-bold page-text-x-large">{project}</div>
       <div className="my-3 page-text-large">{company}</div>
-      <div className="my-3">
+      <div className="mt-3">
         <span className="d-lg-inline d-flex align-items-center align-self-stretch gap-1 me-3">
           <span className="material-symbols-outlined me-1">location_on</span>
           <span>{region}</span>

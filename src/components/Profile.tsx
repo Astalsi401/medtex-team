@@ -13,11 +13,11 @@ export const Profile: React.FC = () => {
     contact: { name, occupation, avatarUrl },
   } = useAppSelector((state) => state.data);
   return (
-    <div className="profile page-rounded page-bd page-bg-white p-4 mb-4">
+    <div className="profile page-rounded page-bd page-bg-white p-4 mb-sm-4 mb-3">
       <Logo src={logoUrl} alt={`company-logo`} />
       <Avatar src={avatarUrl} alt={`avatar`} />
       <ContactName name={name} occupation={occupation} />
-      <Button href={`https://expo.taiwan-healthcare.org/zh/medtex/2024/company?teamId=${teamId}`} className="page-btn d-block p-3 my-4 mx-auto text-center page-bd-primary page-bg-primary page-text-white">
+      <Button href={`https://expo.taiwan-healthcare.org/zh/medtex/2024/company?teamId=${teamId}`} className="page-btn d-block p-3 mt-4 mx-auto text-center page-bd-primary page-bg-primary page-text-white">
         申請商洽
         <i className="ms-3 fa-solid fa-chevron-right" />
       </Button>
@@ -26,7 +26,7 @@ export const Profile: React.FC = () => {
 };
 
 const Logo: React.FC<ImageProps> = ({ src, alt }) => (
-  <div className="profile-logo d-block mx-auto my-4">
+  <div className="profile-logo d-block mx-auto mb-4">
     <img className="w-100" src={src} alt={alt} />
   </div>
 );
