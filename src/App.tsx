@@ -14,7 +14,6 @@ import { Button } from "@components/Button";
 export const App: React.FC = () => {
   const dispatch = useAppDispatch();
   const loading = useAppSelector((state) => state.loading);
-  const teamId = useAppSelector((state) => state.data.teamId);
   useEffect(() => {
     (async () => {
       dispatch(setState({ loading: false, data: await getTeamInfo(getSearchParam("teamId") || "03", "zh") }));
@@ -25,36 +24,43 @@ export const App: React.FC = () => {
   ) : (
     <>
       <Header />
-      <div className="container-xxl py-5">
-        <div className="row">
-          <div className="col-12 d-flex flex-lg-nowrap flex-wrap gap-4">
-            <div className="left-content">
-              <Profile />
-              <Card />
-            </div>
-            <div className="right-content">
-              <Project />
-              <Highlight />
-              <CoreTech />
-              <Market />
-              <CoreProducts />
-              <MileStone />
-            </div>
-          </div>
-          <div className="col-12 my-4 d-flex align-items-center justify-content-center flex-wrap">
-            <Button href="https://expo.taiwan-healthcare.org/zh/medtex/2024" className="page-btn d-block p-3 my-4 mx-2 text-center page-bd-primary page-bg-white page-text-primary">
-              <i className="fa-solid fa-chevron-left me-3" />
-              查看所有新創團隊
-            </Button>
-            <Button href={`https://expo.taiwan-healthcare.org/zh/medtex/2024/form?teamId=${teamId}`} className="page-btn d-block p-3 my-4 mx-2 text-center page-bd-primary page-bg-primary page-text-white">
-              申請商洽
-              <i className="fa-solid fa-chevron-right ms-3" />
-            </Button>
-          </div>
-        </div>
-      </div>
+      <Content />
       <Footer />
     </>
+  );
+};
+
+const Content: React.FC = () => {
+  const teamId = useAppSelector((state) => state.data.teamId);
+  return (
+    <div className="container-xxl py-5">
+      <div className="row">
+        <div className="col-12 d-flex flex-lg-nowrap flex-wrap gap-4">
+          <div className="left-content">
+            <Profile />
+            <Card />
+          </div>
+          <div className="right-content">
+            <Project />
+            <Highlight />
+            <CoreTech />
+            <Market />
+            <CoreProducts />
+            <MileStone />
+          </div>
+        </div>
+        <div className="col-12 my-4 d-flex align-items-center justify-content-center flex-wrap">
+          <Button href="https://expo.taiwan-healthcare.org/zh/medtex/2024" className="page-btn d-block p-3 my-4 mx-2 text-center page-bd-primary page-bg-white page-text-primary">
+            <i className="fa-solid fa-chevron-left me-3" />
+            查看所有新創團隊
+          </Button>
+          <Button href={`https://expo.taiwan-healthcare.org/zh/medtex/2024/form?teamId=${teamId}`} className="page-btn d-block p-3 my-4 mx-2 text-center page-bd-primary page-bg-primary page-text-white">
+            申請商洽
+            <i className="fa-solid fa-chevron-right ms-3" />
+          </Button>
+        </div>
+      </div>
+    </div>
   );
 };
 
