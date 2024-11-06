@@ -15,9 +15,7 @@ export const App: React.FC = () => {
   const dispatch = useAppDispatch();
   const loading = useAppSelector((state) => state.loading);
   useEffect(() => {
-    (async () => {
-      dispatch(setState({ loading: false, data: await getTeamInfo(getSearchParam("teamId") || "03", "zh") }));
-    })();
+    (async () => dispatch(setState({ loading: false, data: await getTeamInfo(getSearchParam("teamId") || "03", "zh") })))();
   }, []);
   return loading ? (
     <></>

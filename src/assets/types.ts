@@ -1,7 +1,10 @@
 export type TeamInfo = {
   teamId: string;
-  logoUrl: string;
+  lang: "ZH" | "EN";
+  region: string;
+  company: string;
   contact: { name: string; occupation: string; avatarUrl: string };
+  logoUrl: string;
   established: string;
   fundingAmount: string;
   annualRevenue: string;
@@ -9,8 +12,6 @@ export type TeamInfo = {
   currentFundingAmount: string;
   postMoneyValuation: string;
   project: string;
-  region: string;
-  company: string;
   mainInvester: string;
   highlights: string[];
   coreTech: string;
