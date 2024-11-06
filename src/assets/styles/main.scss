@@ -111,6 +111,7 @@
 }
 
 .milestone {
+  font-variation-settings: "opsz" 20, "wght" 400, "FILL" 1, "GRAD" 0;
   position: relative;
   line-height: 1.875;
   &:not(:last-child)::after,
@@ -121,7 +122,7 @@
     width: 4px;
     height: calc(50% - 0.5rem);
     background-color: var(--page-third);
-    left: calc(0.5rem + 2px);
+    left: 0.5rem;
   }
   &:not(:last-child)::after {
     top: calc(50% + 0.5rem);
