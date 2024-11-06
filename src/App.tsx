@@ -34,6 +34,9 @@ const Content: React.FC = () => {
   const teamId = useAppSelector((state) => state.data.teamId);
   return (
     <div className="container-xxl py-5">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
       <div className="row">
         <div className="col-12 d-flex flex-lg-nowrap flex-wrap gap-sm-4 gap-3">
           <div className="left-content">
