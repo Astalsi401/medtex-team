@@ -20,17 +20,18 @@ export const CoreProducts: React.FC = () => {
                     <Cell key={colname} className="text-center page-text-white page-bg-third" children={colname} />
                   ))}
                 </Row>
-                {products?.map(({ name, progress, countries }) => (
-                  <Row key={name} className="position-relative" style={{ "--progress": progress, "--cols": cols[type].length - 2 } as React.CSSProperties}>
-                    <Cell children={name} />
-                    {Array(cols[type].length - 2)
-                      .fill(0)
-                      .map((_, i) => (
-                        <Cell key={`${name}-progress-${i}`} />
-                      ))}
-                    <Cell>{countries}</Cell>
-                  </Row>
-                ))}
+                {products &&
+                  products.map(({ name, progress, countries }) => (
+                    <Row key={name} className="position-relative" style={{ "--progress": progress, "--cols": cols[type].length - 2 } as React.CSSProperties}>
+                      <Cell children={name} />
+                      {Array(cols[type].length - 2)
+                        .fill(0)
+                        .map((_, i) => (
+                          <Cell key={`${name}-progress-${i}`} />
+                        ))}
+                      <Cell>{countries}</Cell>
+                    </Row>
+                  ))}
               </div>
             )
         )}
