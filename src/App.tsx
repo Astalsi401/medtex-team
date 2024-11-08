@@ -10,6 +10,7 @@ import { Market } from "@components/Market";
 import { CoreProducts } from "@components/CoreProducts";
 import { MileStone } from "@components/MileStone";
 import { Button } from "@components/Button";
+import { Loading } from "@components/Loading";
 
 export const App: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -27,7 +28,7 @@ export const App: React.FC = () => {
     })();
   }, []);
   return loading ? (
-    <></>
+    <Loading />
   ) : error ? (
     <>{error}</>
   ) : (

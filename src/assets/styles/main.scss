@@ -1,6 +1,28 @@
 @import "./variables.scss";
 @import "./reboot.scss";
 
+#root:has(.page-loading) {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.page-loading {
+  --duration: 0.8s;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  div {
+    width: 4px;
+    height: 40px;
+    border-radius: 4px;
+    animation-name: loading;
+    animation-duration: var(--duration);
+    animation-delay: calc(var(--duration) * var(--i) * 0.1);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+}
+
 .left-content {
   width: min(432px, 100%);
   flex-shrink: 0;
