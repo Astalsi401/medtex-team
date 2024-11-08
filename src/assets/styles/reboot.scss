@@ -16,7 +16,8 @@
   --Border: #ddd;
 }
 
-* {
+*,
+p:has(script) {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -41,10 +42,9 @@ header {
   z-index: 99;
   top: 0;
   font-weight: bold;
-  font-family: LiSong Pro, serif;
-  background-image: var(--Gradient_Main_400);
+  background-image: url(https://expo.taiwan-healthcare.org//data/tmp/20241107/20241107lp0by8.png);
+  background-size: cover;
   & > div {
-    background-color: rgba(255, 255, 255, 0.2);
     height: 64px;
     backdrop-filter: blur(100px);
     display: flex;

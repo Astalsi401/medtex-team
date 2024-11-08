@@ -13,11 +13,11 @@ export const Profile: React.FC = () => {
     contact: { name, occupation, avatarUrl },
   } = useAppSelector((state) => state.data);
   return (
-    <div className="profile page-rounded page-bd page-bg-white p-4 mb-sm-4 mb-3">
+    <div className="page-rounded page-bd page-bg-white p-4 d-flex flex-column gap-4">
       <Logo src={logoUrl} alt={`company-logo`} />
       <Avatar src={avatarUrl} alt={`avatar`} />
       <ContactName name={name} occupation={occupation} />
-      <Button href={`https://expo.taiwan-healthcare.org/zh/medtex/2024/company?teamId=${teamId}`} className="page-btn d-block p-3 mt-4 mx-auto text-center page-bd-primary page-bg-primary page-text-white">
+      <Button href={`https://expo.taiwan-healthcare.org/zh/medtex/2024/company?teamId=${teamId}`} className="page-btn fw-bold d-block p-3 mx-auto text-center page-bd-primary page-bg-primary page-text-white">
         申請商洽
         <i className="ms-3 fa-solid fa-chevron-right" />
       </Button>
@@ -26,20 +26,20 @@ export const Profile: React.FC = () => {
 };
 
 const Logo: React.FC<ImageProps> = ({ src, alt }) => (
-  <div className="profile-logo d-block mx-auto mb-4">
+  <div className="profile-logo d-block mx-auto">
     <img className="w-100" src={src} alt={alt} />
   </div>
 );
 
 const Avatar: React.FC<ImageProps> = ({ src, alt }) => (
-  <div className="page-avatar mx-auto my-4 overflow-hidden">
+  <div className="page-avatar mx-auto overflow-hidden">
     <img className="w-100 h-100" src={src} alt={alt} />
   </div>
 );
 
 const ContactName: React.FC<{ name: string; occupation: string }> = ({ name, occupation }) => (
-  <div className="my-4 text-center">
-    <div className="my-2 fw-bold page-text-xx-large">{name}</div>
-    <div className="my-2">{occupation}</div>
+  <div className="text-center d-flex flex-column gap-2">
+    <div className="fw-bold page-text-xx-large">{name}</div>
+    <div>{occupation}</div>
   </div>
 );

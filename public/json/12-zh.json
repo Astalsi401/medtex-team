@@ -1,0 +1,25 @@
+{
+  "teamId": "12",
+  "lang": "ZH",
+  "region": "新加坡",
+  "project": "利用AI加強癌症病理診斷，報告時間縮短 10 倍！",
+  "company": "Qritive",
+  "contact": { "name": "Bruno Occhipinti", "occupation": "CEO", "avatarUrl": "https://expo.taiwan-healthcare.org/data/cht/20241104/20241104nfjxif.png" },
+  "logoUrl": "https://expo.taiwan-healthcare.org/data/cht/20241104/20241104tli1os.png",
+  "mainInvester": "Mass Mutual Ventures, SEEDS Capital, Exfinity Ventures",
+  "established": "2017",
+  "fundingAmount": "870萬美元",
+  "annualRevenue": "11萬美元",
+  "currentFundingRound": "Bridge round (A+)\n",
+  "currentFundingAmount": "200萬美元",
+  "postMoneyValuation": "3,000萬美元",
+  "highlights": ["已掌握病理學家分析網絡 (PAN)：由 400 多位病理學家組成，提供研究與臨床服務。", "在印度已與三個診斷中心和醫院建立合作夥伴關係。", "多個癌症診斷的 AI 應用中，開發的免疫組織化學染色AI 幫助醫院將錯誤率減少了 9.4%。"],
+  "coreTech": "利用深度學習技術支援解讀病理檢驗，讓診斷更快速，並縮短病患的治療時間，並顯著降低誤診風險。利用大數據已建立各種癌症預測 AI 模型，包括乳腺癌、前列腺癌、結腸癌、免疫組織化學。",
+  "coreTechKeywords": ["數位病理", "人工智慧", "IMS"],
+  "targetMarket": "亞太地區、中東地區的醫院/實驗室",
+  "coreProducts": [
+    { "name": "PANTHEON™\n", "type": "drug", "progress": "0.75", "countries": "歐盟CE、新加坡\n" },
+    { "name": "QAi AI Prostate Dx", "type": "drug", "progress": "0.75", "countries": "新加坡" }
+  ],
+  "milestones": ["完成 歐盟CE 認證和新加坡取證擴展，以便在目標區域內更廣泛地應用。", "在沙烏地阿拉伯和阿聯建立營運據點，以支援市場進入並確保取證合規。"]
+}

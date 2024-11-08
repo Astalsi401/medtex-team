@@ -43,13 +43,13 @@ const Content: React.FC = () => {
   const teamId = useAppSelector((state) => state.data.teamId);
   return (
     <div className="container-xxl py-5">
-      <div className="row">
+      <div className="row g-4">
         <div className="col-12 d-flex flex-lg-nowrap flex-wrap gap-sm-4 gap-3">
-          <div className="left-content">
+          <div className="left-content d-flex flex-column gap-sm-4 gap-3">
             <Profile />
             <Card />
           </div>
-          <div className="right-content">
+          <div className="right-content d-flex flex-column gap-sm-4 gap-3">
             <Project />
             <Highlight />
             <CoreTech />
@@ -58,12 +58,12 @@ const Content: React.FC = () => {
             <MileStone />
           </div>
         </div>
-        <div className="col-12 d-flex align-items-center justify-content-center flex-wrap">
-          <Button href="https://expo.taiwan-healthcare.org/zh/medtex/2024" className="page-btn d-block p-3 my-1 mx-2 text-center page-bd-primary page-bg-white page-text-primary">
+        <div className="col-12 d-flex align-items-center justify-content-center flex-wrap gap-3">
+          <Button href="https://expo.taiwan-healthcare.org/zh/medtex/2024" className="page-btn fw-bold d-block p-3 text-center page-bd-primary page-bg-white page-text-primary">
             <i className="fa-solid fa-chevron-left me-3" />
             查看所有新創團隊
           </Button>
-          <Button href={`https://expo.taiwan-healthcare.org/zh/medtex/2024/form?teamId=${teamId}`} className="page-btn d-block p-3 my-1 mx-2 text-center page-bd-primary page-bg-primary page-text-white">
+          <Button href={`https://expo.taiwan-healthcare.org/zh/medtex/2024/form?teamId=${teamId}`} className="page-btn fw-bold d-block p-3 text-center page-bd-primary page-bg-primary page-text-white">
             申請商洽
             <i className="fa-solid fa-chevron-right ms-3" />
           </Button>

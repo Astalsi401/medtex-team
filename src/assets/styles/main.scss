@@ -20,7 +20,7 @@
 
 .page-card {
   background-image: var(--Gradient_light);
-  & > div {
+  & > div > div {
     &:nth-child(1),
     &:nth-child(2),
     &:nth-child(3) {
@@ -111,7 +111,7 @@
     content: "";
     position: absolute;
     display: block;
-    width: calc(var(--unit) * var(--progress));
+    width: calc(var(--unit) * var(--cols) * 2 * var(--progress));
     height: 20px;
     background-image: var(--Gradient_orange);
     position: absolute;
