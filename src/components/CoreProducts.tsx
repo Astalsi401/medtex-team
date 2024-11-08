@@ -1,9 +1,10 @@
 import { useAppSelector } from "@store";
 import { useMemo } from "react";
+import _ from "lodash";
 
 export const CoreProducts: React.FC = () => {
   const { coreProducts } = useAppSelector((state) => state.data);
-  const productTypes = useMemo(() => Object.entries(Object.groupBy(coreProducts, (p) => p.type)), [coreProducts]);
+  const productTypes = useMemo(() => Object.entries(_.groupBy(coreProducts, (p) => p.type)), [coreProducts]);
   const cols = useMemo<{ [key: string]: string[] }>(() => ({ device: ["", "Pre-clinical", "Phase I", "Phase II", "Phase III", "Marketed", "取證國家"], drug: ["", "Prototype", "Pre-Clinical", "Clinical", "Marketed", "取證國家"] }), []);
   return (
     productTypes.filter(([type]) => Object.keys(cols).includes(type)).length > 0 && (
