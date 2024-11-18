@@ -176,3 +176,15 @@
     bottom: calc(50% + 0.5rem);
   }
 }
+
+.dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  display: grid;
+  place-items: center;
+  background-color: rgba(34, 34, 34, 0.3);
+}

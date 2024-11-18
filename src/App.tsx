@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { getTeamInfo, getSearchParam } from "@functions";
+import { useEffect, useMemo } from "react";
+import { is_production, getTeamInfo, getSearchParam } from "@functions";
 import { useAppDispatch, useAppSelector, setState } from "@store";
 import { Profile } from "@components/Profile";
 import { Card } from "@components/Card";
@@ -11,14 +11,16 @@ import { CoreProducts } from "@components/CoreProducts";
 import { MileStone } from "@components/MileStone";
 import { Button } from "@components/Button";
 import { Loading } from "@components/Loading";
+import { Modal } from "@components/Modal";
 
 export const App: React.FC = () => {
   const dispatch = useAppDispatch();
   const loading = useAppSelector((state) => state.loading);
   const error = useAppSelector((state) => state.error);
+  const lang = useMemo(() => (is_production() ? window.location.pathname.split("/")[1] : "zh"), []);
   useEffect(() => {
     (async () => {
-      const data = await getTeamInfo(getSearchParam("teamId") || "03", "zh");
+      const data = await getTeamInfo(getSearchParam("teamId") || "03", lang);
       if (data.error) {
         console.error(data.error);
         dispatch(setState({ loading: false, error: data.error }));
@@ -30,7 +32,7 @@ export const App: React.FC = () => {
   return loading ? (
     <Loading />
   ) : error ? (
-    <>{error}</>
+    <Modal />
   ) : (
     <>
       <Header />
