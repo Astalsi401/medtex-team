@@ -10,7 +10,7 @@ export const Modal: React.FC = () => {
 
 const Error: React.FC = () => {
   const error = useAppSelector((state) => state.error);
-  const closeModal = () => {};
+  const closeModal = () => window.history.back();
   return (
     <>
       <div className="d-flex flex-column gap-2">
