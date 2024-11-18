@@ -8,12 +8,15 @@ export const MileStone: React.FC = () => {
         <span className="material-symbols-outlined me-1">radar</span>募資里程目標
       </div>
       <div>
-        {milestones.map((milestone) => (
-          <div className="py-2 milestone d-flex align-items-center" key={milestone}>
-            <span className="material-symbols-outlined me-2 page-text-third page-text-large">check_circle</span>
-            {milestone}
-          </div>
-        ))}
+        {milestones.map(
+          (milestone) =>
+            milestone.length > 0 && (
+              <div className="py-2 milestone d-flex align-items-center" key={milestone}>
+                <span className="material-symbols-outlined me-2 page-text-third page-text-large">check_circle</span>
+                {milestone}
+              </div>
+            )
+        )}
       </div>
     </div>
   );

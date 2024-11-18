@@ -9,11 +9,14 @@ export const Highlight: React.FC = () => {
       </div>
       <div>
         <ol>
-          {highlights.map((highlight) => (
-            <li className="my-2" key={highlight}>
-              {highlight}
-            </li>
-          ))}
+          {highlights.map(
+            (highlight) =>
+              highlight.length > 0 && (
+                <li className="my-2" key={highlight}>
+                  {highlight}
+                </li>
+              )
+          )}
         </ol>
       </div>
     </div>
