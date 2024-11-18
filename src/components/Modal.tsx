@@ -10,14 +10,16 @@ export const Modal: React.FC = () => {
 
 const Error: React.FC = () => {
   const error = useAppSelector((state) => state.error);
+  const lang = useAppSelector((state) => state.lang);
   const closeModal = () => window.history.back();
   return (
     <>
       <div className="d-flex flex-column gap-2">
-        <div>Error: {error}</div>
+        <div className="page-text-xx-large fw-bold">Error</div>
+        <div>{error}</div>
       </div>
       <a className="page-btn d-block p-3 mx-auto text-center fw-bold page-bd-primary page-bg-primary page-text-white" onClick={closeModal}>
-        Close
+        {lang == "zh" ? "返回" : "Close"}
       </a>
     </>
   );

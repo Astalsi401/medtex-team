@@ -6,11 +6,13 @@ const stateSlice = createSlice({
   name: "state",
   initialState: {
     loading: true,
+    lang: "zh",
     teamId: "",
     data: {},
     error: null,
   } as {
     loading: boolean;
+    lang: "zh" | "en";
     teamId: string;
     data: TeamInfo;
     error: string | null;
