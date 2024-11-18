@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { is_production, getTeamInfo, getSearchParam } from "@functions";
-import { useAppDispatch, useAppSelector, setState } from "@store";
+import { useAppDispatch, useAppSelector, setState, pageTexts } from "@store";
 import { Profile } from "@components/Profile";
 import { Card } from "@components/Card";
 import { Project } from "@components/Project";
@@ -40,6 +40,7 @@ export const App: React.FC = () => {
 };
 
 const Content: React.FC = () => {
+  const lang = useAppSelector((state) => state.lang);
   return (
     <div className="container-xxl py-5">
       <div className="row g-4">
@@ -60,7 +61,7 @@ const Content: React.FC = () => {
         <div className="col-12 d-flex align-items-center justify-content-center flex-wrap gap-3">
           <Button href="https://expo.taiwan-healthcare.org/zh/medtex/2024" className="page-btn fw-bold d-block p-3 text-center page-bd-primary page-bg-white page-text-primary">
             <i className="fa-solid fa-chevron-left me-3" />
-            查看所有新創團隊
+            {pageTexts.viewStartupCompanyList[lang]}
           </Button>
         </div>
       </div>

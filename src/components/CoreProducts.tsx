@@ -1,16 +1,18 @@
-import { useAppSelector } from "@store";
-import { useMemo } from "react";
 import _ from "lodash";
+import { useMemo } from "react";
+import { useAppSelector, pageTexts } from "@store";
 
 export const CoreProducts: React.FC = () => {
   const { coreProducts } = useAppSelector((state) => state.data);
+  const lang = useAppSelector((state) => state.lang);
   const productTypes = useMemo(() => Object.entries(_.groupBy(coreProducts, (p) => p.type)), [coreProducts]);
-  const cols = useMemo<{ [key: string]: string[] }>(() => ({ device: ["", "Prototype", "Pre-Clinical", "Clinical", "Marketed", "取證國家"], drug: ["", "Pre-Clinical", "Pre-IND", "IND", "Clinical", "Marketed", "取證國家"] }), []);
+  const cols = useMemo<{ [key: string]: string[] }>(() => ({ device: ["", "Prototype", "Pre-Clinical", "Clinical", pageTexts.marketed[lang], "取證國家"], drug: ["", "Pre-Clinical", "Pre-IND", "IND", "Clinical", pageTexts.marketed[lang], "取證國家"] }), []);
   return (
     productTypes.filter(([type]) => Object.keys(cols).includes(type)).length > 0 && (
       <div className="page-rounded page-bd page-bg-white d-flex flex-column gap-3">
         <div className="px-sm-4 pt-sm-4 px-3 pt-3 fw-bold page-text-large d-flex align-items-center">
-          <span className="material-symbols-outlined me-1">signal_cellular_alt</span>核心產品與進度
+          <span className="material-symbols-outlined me-1">signal_cellular_alt</span>
+          {pageTexts.coreProductDevelopmentStage[lang]}
         </div>
         {productTypes.map(
           ([type, products]) =>

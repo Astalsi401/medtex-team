@@ -1,9 +1,10 @@
-import { useAppSelector } from "@store";
+import { useAppSelector, pageTexts } from "@store";
 import { useMemo } from "react";
 
 export const Card: React.FC = ({}) => {
   const { established, fundingAmount, annualRevenue, currentFundingRound, currentFundingAmount, postMoneyValuation } = useAppSelector((state) => state.data);
-  const keyNames = useMemo<{ [key: string]: string }>(() => ({ established: "成立時間", fundingAmount: "累積募資額", annualRevenue: "年營收", currentFundingRound: "募資輪次", currentFundingAmount: "本輪募資額", postMoneyValuation: "投後估值" }), []);
+  const lang = useAppSelector((state) => state.lang);
+  const keyNames = useMemo<{ [key: string]: string }>(() => ({ established: pageTexts.established[lang], fundingAmount: pageTexts.fundingAmount[lang], annualRevenue: pageTexts.annualRevenue[lang], currentFundingRound: pageTexts.currentFundingRound[lang], currentFundingAmount: pageTexts.currentFundingAmount[lang], postMoneyValuation: pageTexts.postMoneyValuation[lang] }), []);
   return (
     <div className="page-card page-rounded page-bd p-sm-4 p-3 text-center">
       <div className="row mx-0 g-4">
