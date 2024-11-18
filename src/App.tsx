@@ -20,12 +20,8 @@ export const App: React.FC = () => {
   const getData = async () => {
     const lang = is_production() ? window.location.pathname.split("/")[1] : "zh";
     const data = await getTeamInfo(getSearchParam("teamId") || "03", lang);
-    if (data.error) {
-      console.error(data.error);
-      dispatch(setState({ loading: false, error: data.error, lang }));
-    } else {
-      dispatch(setState({ loading: false, data, lang }));
-    }
+    if (data.error) console.error(data.error);
+    dispatch(setState({ loading: false, lang, ...(data.error ? { error: data.error } : { data }) }));
   };
   useEffect(() => {
     getData();
