@@ -44,6 +44,7 @@ export const pageTexts = {
   targetMarket: { zh: "目標市場", en: "Target Market" },
   coreProductDevelopmentStage: { zh: "核心產品與進度", en: "Core Product Development Stage" },
   marketed: { zh: "已取證", en: "Marketed" },
+  markets: { zh: "取證國家", en: "Markets" },
   milestonesForThisRound: { zh: "募資里程目標", en: "Milestones For This Round" },
   viewStartupCompanyList: { zh: "查看所有新創團隊", en: "View Startup Company List" },
 };

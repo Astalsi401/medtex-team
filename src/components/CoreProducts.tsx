@@ -6,7 +6,7 @@ export const CoreProducts: React.FC = () => {
   const { coreProducts } = useAppSelector((state) => state.data);
   const lang = useAppSelector((state) => state.lang);
   const productTypes = useMemo(() => Object.entries(_.groupBy(coreProducts, (p) => p.type)), [coreProducts]);
-  const cols = useMemo<{ [key: string]: string[] }>(() => ({ device: ["", "Prototype", "Pre-Clinical", "Clinical", pageTexts.marketed[lang], "取證國家"], drug: ["", "Pre-Clinical", "Pre-IND", "IND", "Clinical", pageTexts.marketed[lang], "取證國家"] }), []);
+  const cols = useMemo<{ [key: string]: string[] }>(() => ({ device: ["", "Prototype", "Pre-Clinical", "Clinical", pageTexts.marketed[lang], pageTexts.markets[lang]], drug: ["", "Pre-Clinical", "Pre-IND", "IND", "Clinical", pageTexts.marketed[lang], pageTexts.markets[lang]] }), []);
   return (
     productTypes.filter(([type]) => Object.keys(cols).includes(type)).length > 0 && (
       <div className="page-rounded page-bd page-bg-white d-flex flex-column gap-3">
