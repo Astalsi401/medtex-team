@@ -1,4 +1,3 @@
-import { Button } from "@components/Button";
 import { useAppSelector } from "@store";
 
 type ImageProps = {
@@ -8,7 +7,6 @@ type ImageProps = {
 
 export const Profile: React.FC = () => {
   const {
-    teamId,
     logoUrl,
     contact: { name, occupation, avatarUrl },
   } = useAppSelector((state) => state.data);
@@ -17,10 +15,6 @@ export const Profile: React.FC = () => {
       <Logo src={logoUrl} alt={`company-logo`} />
       <Avatar src={avatarUrl} alt={`avatar`} />
       <ContactName name={name} occupation={occupation} />
-      <Button href={`https://expo.taiwan-healthcare.org/zh/medtex/2024/company?teamId=${teamId}`} className="page-btn fw-bold d-block p-3 mx-auto text-center page-bd-primary page-bg-primary page-text-white">
-        申請商洽
-        <i className="ms-3 fa-solid fa-chevron-right" />
-      </Button>
     </div>
   );
 };

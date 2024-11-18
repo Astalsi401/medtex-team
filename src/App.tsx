@@ -44,7 +44,6 @@ export const App: React.FC = () => {
 };
 
 const Content: React.FC = () => {
-  const teamId = useAppSelector((state) => state.data.teamId);
   return (
     <div className="container-xxl py-5">
       <div className="row g-4">
@@ -66,10 +65,6 @@ const Content: React.FC = () => {
           <Button href="https://expo.taiwan-healthcare.org/zh/medtex/2024" className="page-btn fw-bold d-block p-3 text-center page-bd-primary page-bg-white page-text-primary">
             <i className="fa-solid fa-chevron-left me-3" />
             查看所有新創團隊
-          </Button>
-          <Button href={`https://expo.taiwan-healthcare.org/zh/medtex/2024/form?teamId=${teamId}`} className="page-btn fw-bold d-block p-3 text-center page-bd-primary page-bg-primary page-text-white">
-            申請商洽
-            <i className="fa-solid fa-chevron-right ms-3" />
           </Button>
         </div>
       </div>
