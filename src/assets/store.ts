@@ -32,6 +32,8 @@ export type AppDispatch = typeof store.dispatch;
 export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
 export const useAppSelector = useSelector.withTypes<RootState>();
 export const pageTexts = {
+  eventTime: { zh: "2024.12.03(二)-12.04(三)", en: "2024.12.03(Tue)-12.04(Wed)" },
+  eventLocation: { zh: "台北寒舍艾美酒店3F翡翠珍珠廳", en: "3F, Ballroom, Le Méridien Taipei" },
   established: { zh: "成立時間", en: "Year Founded" },
   fundingAmount: { zh: "累積募資額", en: "Total Funding Raised" },
   annualRevenue: { zh: "年營收", en: "Annual Revenue" },

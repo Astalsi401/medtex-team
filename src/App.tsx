@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { is_production, getTeamInfo, getSearchParam } from "@functions";
+import { getTeamInfo, getSearchParam } from "@functions";
 import { useAppDispatch, useAppSelector, setState, pageTexts } from "@store";
 import { Profile } from "@components/Profile";
 import { Card } from "@components/Card";
@@ -18,7 +18,7 @@ export const App: React.FC = () => {
   const loading = useAppSelector((state) => state.loading);
   const error = useAppSelector((state) => state.error);
   const getData = async () => {
-    const lang = is_production() ? window.location.pathname.split("/")[1] : "zh";
+    const lang = "en"; // is_production() ? window.location.pathname.split("/")[1] : "zh";
     const data = await getTeamInfo(getSearchParam("teamId") || "03", lang);
     if (data.error) console.error(data.error);
     dispatch(setState({ loading: false, lang, ...(data.error ? { error: data.error } : { data }) }));
@@ -69,17 +69,20 @@ const Content: React.FC = () => {
   );
 };
 
-const Header: React.FC = () => (
-  <header className="page-text-white text-small">
-    <div>
-      <img className="logo d-block" src="https://expo.taiwan-healthcare.org//data/tmp/20230928/20230928epf7fo.svg" alt="logo" />
-      <div className="px-2">
-        <div>2024.12.03(二)-12.04(三)</div>
-        <div>台北寒舍艾美酒店3F翡翠珍珠廳</div>
+const Header: React.FC = () => {
+  const lang = useAppSelector((state) => state.lang);
+  return (
+    <header className="page-text-white text-small">
+      <div>
+        <img className="logo d-block" src="https://expo.taiwan-healthcare.org//data/tmp/20230928/20230928epf7fo.svg" alt="logo" />
+        <div className="px-2">
+          <div>{pageTexts.eventTime[lang]}</div>
+          <div>{pageTexts.eventLocation[lang]}</div>
+        </div>
       </div>
-    </div>
-  </header>
-);
+    </header>
+  );
+};
 
 const Footer: React.FC = () => (
   <footer className="w-100 d-flex align-items-center justify-content-center">
