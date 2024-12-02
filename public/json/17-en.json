@@ -1,0 +1,25 @@
+{
+  "teamId": "17",
+  "lang": "ZH",
+  "region": "Taiwan",
+  "project": "",
+  "company": "Pharmosa Biopharm",
+  "contact": { "name": "Pei Kan", "occupation": "Co-Founder / CEO", "avatarUrl": "https://expo.taiwan-healthcare.org/data/cht/20241128/202411285ghz9j.jpeg" },
+  "logoUrl": "https://expo.taiwan-healthcare.org/data/cht/20241202/2024120237ylxs.jpeg",
+  "mainInvester": "CDIB Capital Healthcare Ventures II, Yuanta Asia Investment",
+  "established": "2016",
+  "fundingAmount": "$94M",
+  "annualRevenue": "$10M",
+  "currentFundingRound": "",
+  "currentFundingAmount": "",
+  "postMoneyValuation": "On Market",
+  "highlights": ["Three platform technologies (Liposome, Nebulizer and Combo kit) have been established with two products (L606 & L608) in ongoing clinical studies targeting three indications (PH-ILD, PAH & SSc-RP/DU).", "L606 is currently in Phase III clinical stage for treating PAH and PH-ILD.", "Out-licensing L606 program to Liquidia Technologies, Inc. in the territories including North America, Europe and Japan, and to Menagen Pharmaceutical Industries in Middle East, North Africa and Turkey.", "L608 has completed Phase I clinical trial and Pre-IND consultation with US FDA on Phase II clinical study design for treating SSc-RP/DU."],
+  "coreTech": "Extended-Release Liposome, Breath-Actuated Mesh-Vibrating Nebulizer and  Combination Kit for Inhalation.",
+  "coreTechKeywords": ["Liposome", "Inhalation Device", "Combination Kit"],
+  "targetMarket": "1.Global - Pulmonary Hypertension Associated with Interstitial Lung Disease (PH-ILD). \n2.Global - Pulmonary Arterial Hypertension (PAH). \n3.Global - Systemic Sclerosis Associated Raynaud Phenomenon / Digital ulcers (SSc-RP/DU).",
+  "coreProducts": [
+    { "name": "L606", "type": "drug", "progress": 0.8, "countries": "" },
+    { "name": "L608", "type": "drug", "progress": 0.7, "countries": "" }
+  ],
+  "milestones": []
+}

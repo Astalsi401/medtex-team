@@ -9,7 +9,11 @@ export const Market: React.FC = () => {
         <span className="material-symbols-outlined me-1">business_center</span>
         {pageTexts.targetMarket[lang]}
       </div>
-      <div>{targetMarket}</div>
+      <div>
+        {targetMarket.split("\n").map((item, i) => (
+          <div key={i}>{item}</div>
+        ))}
+      </div>
     </div>
   );
 };
