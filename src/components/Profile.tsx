@@ -9,10 +9,10 @@ type ImageProps = {
 export const Profile: React.FC = () => {
   const {
     logoUrl,
-    teamId,
     contact: { name, occupation, avatarUrl },
   } = useAppSelector((state) => state.data);
   const lang = useAppSelector((state) => state.lang);
+  const teamId = useAppSelector((state) => state.data.teamId);
   return (
     <div className="page-rounded page-bd page-bg-white p-4 d-flex flex-column gap-4">
       <Logo src={logoUrl} alt={`company-logo`} />

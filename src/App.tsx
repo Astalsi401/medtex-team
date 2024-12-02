@@ -40,7 +40,7 @@ export const App: React.FC = () => {
 };
 
 const Content: React.FC = () => {
-  const teamId = useAppSelector((state) => state.teamId);
+  const teamId = useAppSelector((state) => state.data.teamId);
   const lang = useAppSelector((state) => state.lang);
   return (
     <div className="container-xxl py-5">
