@@ -40,6 +40,7 @@ export const App: React.FC = () => {
 };
 
 const Content: React.FC = () => {
+  const teamId = useAppSelector((state) => state.teamId);
   const lang = useAppSelector((state) => state.lang);
   return (
     <div className="container-xxl py-5">
@@ -62,6 +63,10 @@ const Content: React.FC = () => {
           <Button href="https://expo.taiwan-healthcare.org/zh/medtex/2024" className="page-btn fw-bold d-block p-3 text-center page-bd-primary page-bg-white page-text-primary">
             <i className="fa-solid fa-chevron-left me-3" />
             {pageTexts.viewStartupCompanyList[lang]}
+          </Button>
+          <Button href={`https://expo.taiwan-healthcare.org/zh/medtex/2024/form?teamId=${teamId}`} className="page-btn fw-bold d-block p-3 text-center page-bd-primary page-bg-primary page-text-white">
+            {pageTexts.applyForMeeting[lang]}
+            <i className="fa-solid fa-chevron-right ms-3" />
           </Button>
         </div>
       </div>

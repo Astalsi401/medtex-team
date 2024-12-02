@@ -49,4 +49,5 @@ export const pageTexts = {
   markets: { zh: "取證國家", en: "Markets" },
   milestonesForThisRound: { zh: "募資里程目標", en: "Milestones For This Round" },
   viewStartupCompanyList: { zh: "查看所有新創團隊", en: "View Startup Company List" },
+  applyForMeeting: { zh: "申請商洽", en: "Apply For Meeting" },
 };
